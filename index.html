@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>Wot in conjugation</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+* {
+font-family: 'Roboto', sans-serif;
+
+}
+</style>
+</head>
+<body>
+<center>
+<h1>wot in conjugation</h1>
+<hr>
+<input type='text' id='n' placeholder='Subject (optional)'> <input placeholder='verb' id='verb' type='text'>
+<button onclick="process();">Conjugate!</button>
+
+<p id='conj'><font color='lightgray'>Enter one verb and hit the button to begin</font></p>
+</center>
+</body>
+<script>
+function process() {
+var verb = document.getElementById("verb").value;
+var noun = document.getElementById("n").value;
+
+if (noun == "") {
+	con(0, verb);
+} else {
+	con(1, verb);
+}
+}
+function con(type, verb) {
+	var end = verb.slice(-2, verb.length);
+	console.log(end);
+	var verb = verb.slice(0, verb.length-2);
+
+	if (end == "er") {
+		var e1 = "o";
+		var e2 = "es";
+		var e3 = "e";
+		var e4 = "emos";
+		var e5 = "&#233;is";
+		var e6 = "en";
+	}
+
+
+	if (end == "ir") {
+		var e1 = "o";
+		var e2 = "es";
+		var e3 = "e";
+		var e4 = "imos";
+		var e5 = "&#237;s";
+		var e6 = "en";
+	}
+
+	if (end == "ar") {
+		var e1 = "o";
+		var e2 = "as";
+		var e3 = "a";
+		var e4 = "amos";
+		var e5 = "&#225;is";
+		var e6 = "an";
+	}
+
+	if (type == 0) {
+		document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+	}
+
+	if (type == 1) {
+		var noun = document.getElementById("n").value;
+
+		if (noun == "yo") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td><b>" + verb + e1 + "</b></td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "tu") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td><b>" + verb + e2 + "</b></td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "el") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td><b>" + verb + e3 + "</b></td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "ella") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td><b>" + verb + e3 + "</b></td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "usted") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td><b>" + verb + e3 + "</b></td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "nosotros") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td><b>" + verb + e4 + "</b></td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "nosotras") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td><b>" + verb + e4 + "</b></td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "vosotros") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td><b>" + verb + e5 + "</b></td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "vosotras") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td><b>" + verb + e5 + "</b></td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
+		}
+
+		if (noun == "ellos") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td><b>" + verb + e6 + "</b></td></tr>" + "</table>";
+		}
+
+		if (noun == "ellas") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td><b>" + verb + e6 + "</b></td></tr>" + "</table>";
+		}
+
+		if (noun == "ustedes") {
+			document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td><b>" + verb + e6 + "</b></td></tr>" + "</table>";
+		}
+
+
+
+	}
+}
+</script>
+</html>
+
+
+
+
+
+
+
