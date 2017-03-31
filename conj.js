@@ -12,7 +12,7 @@ function con(type, verb) {
 	var end = verb.slice(-2, verb.length);
 	console.log(end);
 	var verb = verb.slice(0, verb.length-2);
-
+var deny = false;
 	if (end == "er") {
 		var e1 = "o";
 		var e2 = "es";
@@ -23,7 +23,7 @@ function con(type, verb) {
 	}
 
 
-	if (end == "ir") {
+	else if (end == "ir") {
 		var e1 = "o";
 		var e2 = "es";
 		var e3 = "e";
@@ -32,7 +32,7 @@ function con(type, verb) {
 		var e6 = "en";
 	}
 
-	if (end == "ar") {
+	else if (end == "ar") {
 		var e1 = "o";
 		var e2 = "as";
 		var e3 = "a";
@@ -40,12 +40,16 @@ function con(type, verb) {
 		var e5 = "&#225;is";
 		var e6 = "an";
 	}
+	else {
+		deny = true;
+		document.getElementById('conj').innerHTML = "<font color='red'>The verb needs to end in er, ar, or ir</font>";
+	}
 
-	if (type == 0) {
+	if (type == 0 && deny == false) {
 		document.getElementById("conj").innerHTML = "<table>" + "<tr><td>" + verb + e1 + "</td>" + "<td>" + verb + e4 + "</td></tr>" + "<tr><td>" + verb + e2 + "</td>" + "<td>" + verb + e5 + "</td></tr>" + "<tr><td>" + verb + e3 + "</td>" + "<td>" + verb + e6 + "</td></tr>" + "</table>";
 	}
 
-	if (type == 1) {
+	if (type == 1 && deny == false) {
 		var noun = document.getElementById("n").value;
 		noun = noun.toLowerCase();
 

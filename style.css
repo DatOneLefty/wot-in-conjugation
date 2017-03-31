@@ -1,0 +1,13 @@
+input {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.container {
+	margin: 5%;
+}
+
+hr {
+	border: 1px solid black;
+}
